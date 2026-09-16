@@ -3,12 +3,12 @@ import db from "../config/db.js";
 const users = db.collection("users")
 
 export const create = async (user) => {
-    const {insertedId} = await users.insertOne(user)
+    const { insertedId } = await users.insertOne(user)
     return insertedId.toString()
 }
 
 export const getByEmail = async (email) => {
-    const {_id, user} = await users.findOne({email})
-    return {id: _id.toString(), ...user}
+    const { _id, ...user } = await users.findOne({ email })
+    return { id: _id.toString(), ...user }
 }
 
