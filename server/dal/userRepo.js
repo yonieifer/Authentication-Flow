@@ -8,7 +8,7 @@ export const create = async (user) => {
 }
 
 export const getByEmail = async (email) => {
-    const user = await users.findOne({email})
-    return user
+    const {_id, user} = await users.findOne({email})
+    return {id: _id.toString(), ...user}
 }
 
