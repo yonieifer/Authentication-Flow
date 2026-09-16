@@ -1,5 +1,5 @@
-import { getByEmail, create } from "../dal/userRepo";
-import { httpError } from "../utils";
+import { getByEmail, create } from "../dal/userRepo.js";
+import { httpError } from "../utils.js";
 import bcrypt from "bcryptjs"
 
 export const register = async (username, email, password) => {

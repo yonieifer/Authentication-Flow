@@ -1,6 +1,5 @@
 import express from "express"
-import { httpError } from "./utils"
-import { register } from "./services/authService"
+import { register } from "./services/authService.js"
 
 const app = express()
 
